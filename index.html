@@ -6,6 +6,22 @@
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>People Manager Portfolio · 이희주</title>
 <style>
+
+    /* 복사/드래그 방지 */
+    html, body, * {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      -webkit-touch-callout: none;
+    }
+
+    img {
+      -webkit-user-drag: none;
+      user-drag: none;
+      pointer-events: none;
+    }
+
     :root {
       --brand: #f26f21;
       --ink: #172033;
@@ -639,7 +655,7 @@
 <ul class="case__tags">
 <li>채용 운영 개선</li><li>데이터 기반 개선</li><li>ATS 도입</li><li>Google Apps Script</li><li>Slack API</li><li>하이어링 매니저 협업</li>
 </ul>
-<details open="">
+<details>
 <summary>자세히 보기 · 채용 운영 구조 전환 과정</summary>
 <div class="case__detail">
 <div class="process-flow">
@@ -727,7 +743,7 @@
 <ul class="case__tags">
 <li>온보딩 개선</li><li>유저저니</li><li>인터뷰 설계</li><li>피드백 루프</li><li>입사자 경험</li>
 </ul>
-<details open="">
+<details>
 <summary>자세히 보기 · 온보딩 여정 설계 과정</summary>
 <div class="case__detail">
 <div class="detail-grid">
@@ -809,7 +825,7 @@
 <ul class="case__tags">
 <li>조직문화</li><li>전사 워크샵</li><li>동료 경험</li><li>Culture&amp;Value</li><li>프로그램 운영</li>
 </ul>
-<details open="">
+<details>
 <summary>자세히 보기 · 조직문화 프로그램 기획 과정</summary>
 <div class="case__detail">
 <div class="approach-card">
@@ -878,7 +894,7 @@
 <ul class="case__tags">
 <li>커뮤니케이션 기준</li><li>커뮤니케이션 가이드</li><li>협업 기준</li><li>온보딩 자료</li><li>외부 협업</li>
 </ul>
-<details open="">
+<details>
 <summary>자세히 보기 · 커뮤니케이션 가이드 정리 과정</summary>
 <div class="case__detail">
 <div class="detail-card wide">
@@ -980,5 +996,38 @@
 <footer class="footer">
     People Manager Portfolio · 이희주
   </footer>
+
+<script>
+    document.addEventListener('contextmenu', function (event) {
+      event.preventDefault();
+    });
+
+    document.addEventListener('copy', function (event) {
+      event.preventDefault();
+    });
+
+    document.addEventListener('cut', function (event) {
+      event.preventDefault();
+    });
+
+    document.addEventListener('dragstart', function (event) {
+      event.preventDefault();
+    });
+
+    document.addEventListener('selectstart', function (event) {
+      event.preventDefault();
+    });
+
+    document.addEventListener('keydown', function (event) {
+      const key = event.key.toLowerCase();
+      const isCopyShortcut =
+        (event.ctrlKey || event.metaKey) &&
+        ['a', 'c', 'x', 's', 'p', 'u'].includes(key);
+
+      if (isCopyShortcut) {
+        event.preventDefault();
+      }
+    });
+  </script>
 </body>
 </html>
